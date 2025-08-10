@@ -4,11 +4,14 @@ import "dotenv/config";
 
 import cors from "cors"
 import { get } from "mongoose";
+import connectDB from "./configs/db.js";
+
+connectDB()
 
 const app = express();
 app.use(cors()) //enable cross-origin resoure sharing
 
-app.get('/', (req, res) => res.send("API is Working"))
+app.get('/', (req, res) => res.send("API is Working Fine"))
 
 const PORT = process.env.PORT || 3000;
 
